@@ -1,0 +1,13 @@
+annoy==1.17.3
+cython==0.29.33
+glasbey==0.2.0
+pybind11==2.10.3
+pykeops==2.1.1
+pynndescent==0.5.10
+scanorama==1.7.3
+scikit-tda==1.0.0
+sortedcontainers==2.4.0
+tadasets==0.0.4
+tqdm==4.65.0
+opentsne==0.6.2
+umap-learn==0.5.4

@@ -1,0 +1,47 @@
+Loading pytorch/gpu-cuda-11.6/2.0.0
+  Loading requirement: cudnn/8.8.1
+ERROR: Unable to locate a modulefile for 'horovod-pytorch-2.0.0/gpu-cuda-11.6/0.27.0'
+Traceback (most recent call last):
+  File "/raven/u/yxiong/eff-ph/scripts/compute_ph.py", line 133, in <module>
+    dists = get_dist(x=x, distance=distance, **dist_kwargs)
+  File "/u/yxiong/eff-ph/utils/dist_utils.py", line 762, in get_dist
+    dist = get_dtm_weights(x, input_distance=input_distance, **kwargs)
+  File "/u/yxiong/eff-ph/utils/dist_utils.py", line 123, in get_dtm_weights
+    dtm = get_dtm(x, k, p=p_dtm, input_distance=input_distance)
+  File "/u/yxiong/eff-ph/utils/dist_utils.py", line 164, in get_dtm
+    knn_dists = kNN_dists(x, k=k, metric=input_distance).cpu().numpy()
+  File "/u/yxiong/vis_utils/vis_utils/utils.py", line 155, in kNN_dists
+    knn_dists = dists.Kmin(K=k + 1, dim=0)[:, 1:] # use k+1 neighbours and omit first, which is just the point
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/lazy_tensor.py", line 2145, in Kmin
+    return self.reduction("KMin", opt_arg=K, axis=axis, dim=dim, **kwargs)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/lazy_tensor.py", line 768, in reduction
+    return res()
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/lazy_tensor.py", line 950, in __call__
+    return self.callfun(*args, *self.variables, **self.kwargs)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/torch/generic/generic_red.py", line 627, in __call__
+    out = GenredAutograd.apply(
+  File "/mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/autograd/function.py", line 506, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/torch/generic/generic_red.py", line 78, in forward
+    myconv = keops_binder["nvrtc" if tagCPUGPU else "cpp"](
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/keopscore/utils/Cache.py", line 68, in __call__
+    obj = self.cls(*args)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/keops_io/LoadKeOps_nvrtc.py", line 15, in __init__
+    super().__init__(*args, fast_init=fast_init)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/keops_io/LoadKeOps.py", line 18, in __init__
+    self.init(*args)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/keops_io/LoadKeOps.py", line 126, in init
+    ) = get_keops_dll(
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/keopscore/utils/Cache.py", line 27, in __call__
+    self.library[str_id] = self.fun(*args)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/keopscore/get_keops_dll.py", line 110, in get_keops_dll_impl
+    map_reduce_obj = map_reduce_class(red_formula_string, aliases, *args)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/keopscore/mapreduce/gpu/GpuReduc1D.py", line 17, in __init__
+    Gpu_link_compile.__init__(self)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/keopscore/binders/nvrtc/Gpu_link_compile.py", line 54, in __init__
+    self.my_c_dll = CDLL(jit_compile_dll(), mode=RTLD_LAZY)
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2021.11/lib/python3.9/ctypes/__init__.py", line 382, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /u/yxiong/.cache/keops2.1.1/build_CUDA_VISIBLE_DEVICES_0/nvrtc_jit.so: cannot open shared object file: No such file or directory
+srun: error: ravg1013: task 0: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=8026659.0

@@ -1,0 +1,89 @@
+Loading pytorch/gpu-cuda-11.6/2.0.0
+  Loading requirement: cudnn/8.8.1
+CMake Warning (dev) at /u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/keops/cuda.cmake:98 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Environment variable CUDA_ROOT is set to:
+
+    /mpcdf/soft/SLE_15/packages/x86_64/cuda/11.6.2
+
+  For compatibility, CMake is ignoring the variable.
+Call Stack (most recent call first):
+  CMakeLists.txt:29 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/keops/cuda.cmake:98 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Environment variable CUDA_ROOT is set to:
+
+    /mpcdf/soft/SLE_15/packages/x86_64/cuda/11.6.2
+
+  For compatibility, CMake is ignoring the variable.
+Call Stack (most recent call first):
+  CMakeLists.txt:27 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+In file included from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/../detail/common.h:259,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/../attr.h:13,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/class.h:12,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/pybind11.h:13,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/torch/csrc/utils/pybind.h:9,
+                 from ./torch_headers.h:19,
+                 from <command-line>:
+/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/cmake_scripts/script_template/../../version:1:1: error: expected unqualified-id before numeric constant
+    1 | 1.5
+      | ^~~
+In file included from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/../cast.h:14,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/../attr.h:14,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/class.h:12,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/pybind11.h:13,
+                 from /mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/torch/csrc/utils/pybind.h:9,
+                 from ./torch_headers.h:19,
+                 from <command-line>:
+/mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/include/pybind11/detail/../detail/descr.h:33:45: error: ‘index_sequence’ has not been declared
+   33 |     constexpr descr(char const (&s)[N + 1], index_sequence<Is...>) : text{s[Is]..., '\0'} {}
+      |                                             ^~~~~~~~~~~~~~
+compilation terminated due to -fmax-errors=2.
+gmake[3]: *** [CMakeFiles/libKeOps_template_33ebbbf34e.dir/build.make:77: CMakeFiles/libKeOps_template_33ebbbf34e.dir/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/torch/generic/generic_red.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:100: CMakeFiles/libKeOps_template_33ebbbf34e.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:107: CMakeFiles/libKeOps_template_33ebbbf34e.dir/rule] Error 2
+gmake: *** [Makefile:124: libKeOps_template_33ebbbf34e] Error 2
+Traceback (most recent call last):
+  File "/raven/u/yxiong/eff-ph/scripts/compute_ph.py", line 133, in <module>
+    dists = get_dist(x=x, distance=distance, **dist_kwargs)
+  File "/u/yxiong/eff-ph/utils/dist_utils.py", line 762, in get_dist
+    dist = get_dtm_weights(x, input_distance=input_distance, **kwargs)
+  File "/u/yxiong/eff-ph/utils/dist_utils.py", line 123, in get_dtm_weights
+    dtm = get_dtm(x, k, p=p_dtm, input_distance=input_distance)
+  File "/u/yxiong/eff-ph/utils/dist_utils.py", line 164, in get_dtm
+    knn_dists = kNN_dists(x, k=k, metric=input_distance).cpu().numpy()
+  File "/u/yxiong/vis_utils/vis_utils/utils.py", line 155, in kNN_dists
+    knn_dists = dists.Kmin(K=k + 1, dim=0)[:, 1:] # use k+1 neighbours and omit first, which is just the point
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/lazy_tensor.py", line 2105, in Kmin
+    return self.reduction("KMin", opt_arg=K, axis=axis, dim=dim, **kwargs)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/lazy_tensor.py", line 744, in reduction
+    return res()
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/lazy_tensor.py", line 929, in __call__
+    return self.callfun(*args, *self.variables, **self.kwargs)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/torch/generic/generic_red.py", line 568, in __call__
+    out = GenredAutograd.apply(
+  File "/mpcdf/soft/SLE_15/packages/skylake/pytorch/gpu-cuda-11.6/anaconda_3_2021.11-2021.11/2.0.0/lib/python3.9/site-packages/torch/autograd/function.py", line 506, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/torch/generic/generic_red.py", line 47, in forward
+    myconv = LoadKeOps(
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/keops_io.py", line 48, in __init__
+    self._safe_compile()
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/utils.py", line 75, in wrapper_filelock
+    func_res = func(*args, **kwargs)
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/keops_io.py", line 55, in _safe_compile
+    compile_generic_routine(
+  File "/u/yxiong/eff-ph/.venv/lib/python3.9/site-packages/pykeops/common/compile_routines.py", line 269, in compile_generic_routine
+    fname = list(pathlib.Path(template_build_folder).glob(template_name + "*.so"))[
+IndexError: list index out of range
+srun: error: ravg1094: task 0: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=8025607.0

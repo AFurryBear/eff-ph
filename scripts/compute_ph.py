@@ -1,8 +1,11 @@
 import numpy as np
-from utils.utils import get_path, read_ripser_result, compute_ph
-from utils.io_utils import dist_kwargs_to_str
-from utils.toydata_utils import get_toy_data
-from utils.dist_utils import get_dist
+import sys
+sys.path.append('/u/yxiong/eff-ph/utils/')
+sys.path.append('/u/yxiong/vis_utils/')
+from utils import get_path, read_ripser_result, compute_ph
+from io_utils import dist_kwargs_to_str
+from toydata_utils import get_toy_data
+from dist_utils import get_dist
 import os
 #####################################################################
 # Hyperparameters
@@ -16,14 +19,14 @@ sigmas = np.linspace(0.0, 0.35, 29)
 sigmas = np.array([np.format_float_positional(sigma, precision=4, unique=True, trim='0') for sigma in sigmas]).astype(float)
 
 distances = {
-    "euclidean": [{}],
-    "fermat": [
-               {"p": 1},
-               {"p": 2},
-               {"p": 3},
-               {"p": 5},
-               {"p": 7}
-               ],
+    # "euclidean": [{}],
+    # "fermat": [
+    #            {"p": 1},
+    #            {"p": 2},
+    #            {"p": 3},
+    #            {"p": 5},
+    #            {"p": 7}
+    #            ],
     "dtm": [
             {"k": 4, "p_dtm": 2, "p_radius": 1},
             {"k": 4, "p_dtm": np.inf, "p_radius": 1},
@@ -94,7 +97,7 @@ n = 1000
 
 #####################################################################
 
-root_path = get_path("data")
+root_path = '/u/yxiong/eff-ph/data'
 
 for seed in seeds:
     for sigma in sigmas:
@@ -106,26 +109,31 @@ for seed in seeds:
                 file_name = f"{dataset}_{n}_d_{d}_ortho_gauss_sigma_{sigma}_seed_{seed}_{distance}" \
                             + dist_kwargs_to_str(dist_kwargs)
                 print(f"Starting with {file_name}")
+                folder_path = os.path.join(root_path,dataset)
+                os.makedirs(folder_path,exist_ok=True)
+                file_path = os.path.join(root_path, dataset, file_name+"_rep")
+                 
                 # try to load precomputed result
-                try:
-                    res = read_ripser_result(os.path.join(root_path, dataset, file_name+"_rep"))
+                #try:
+                    #res = read_ripser_result(os.path.join(root_path, dataset, file_name+"_rep"))
                 # if non-existent compute PH
-                except FileNotFoundError:
-                    print(f"Computing PH for {dataset} with sigma {sigma} and distance {distance} with {dist_kwargs}")
+                #except FileNotFoundError:
+                print(f"Computing PH for {dataset} with sigma {sigma} and distance {distance} with {dist_kwargs}")
 
-                    # copy the dict bc we will change it for the embedding based approaches, so that we can nicely save
-                    # the embedding as well
-                    dist_kwargs = dist_kwargs.copy()
+                # copy the dict bc we will change it for the embedding based approaches, so that we can nicely save
+                # the embedding as well
+                dist_kwargs = dist_kwargs.copy()
 
-                    # update the distance with embedding parameters, needed for saving the embedding itself
-                    if distance.endswith("embd"):
-                        dist_kwargs.update({"root_path": os.path.join(root_path, dataset),
-                                            "dataset": f"n_{n}_d_{d}_ortho_gauss_sigma_{sigma}",
-                                            "seed": seed})
-                    # compute the distance
-                    dists = get_dist(x=x, distance=distance, **dist_kwargs)
-                    # compute peristent homology
-                    res = compute_ph(dists, file_name, root_path, dataset, dim=max_dim, delete_dists=True)
+                # update the distance with embedding parameters, needed for saving the embedding itself
+                if distance.endswith("embd"):
+                    dist_kwargs.update({"root_path": os.path.join(root_path, dataset),
+                                        "dataset": f"n_{n}_d_{d}_ortho_gauss_sigma_{sigma}",
+                                        "seed": seed})
+                # compute the distance
+                dists = get_dist(x=x, distance=distance, **dist_kwargs)
+                # compute peristent homology
+                res = compute_ph(dists, file_name, root_path, dataset, dim=max_dim, delete_dists=False)
+
 
 
 

@@ -1,0 +1,28 @@
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: yxiong(51553)
+Job name:  test_torch
+Node list: ravg1147
+Job start: Wed Nov 29 16:51:05 CET 2023
+Job end:   Wed Nov 29 16:51:29 CET 2023
+Work dir:  /u/yxiong/eff-ph
+Command:   /raven/u/yxiong/eff-ph/submit_gpu_script.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+8026624       test_torch      1            12                             00:00:24      1:0
+8026624.0         python      1      1     12        1.47M        1.47M   00:00:22      1:0
+  
+Maximum memory per node: 0.001537 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 0.0 %
+  

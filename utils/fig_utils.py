@@ -526,6 +526,3 @@ def plot_edges_on_scatter(ax, edge_idx, x, color="k", linewidth=2, **kwargs):
     else:
         raise ValueError("Can only plot 2D and 3D embeddings.")
     return ax
-
-
-

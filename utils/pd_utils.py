@@ -522,6 +522,3 @@ def get_outlier_scores_best_auc(all_res, dim=1, n_features=1):
                 if auc[dist][full_dist] > best_aucs[dist]["auc"]:
                     best_aucs[dist] = {"run": full_dist, "auc": auc[dist][full_dist]}
     return outlier_scores, best_aucs
-
-
-
