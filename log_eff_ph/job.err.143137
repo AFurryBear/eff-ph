@@ -1,0 +1,88 @@
+make[3]: Warning: File 'KeOps_formula.h' has modification time 198 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+CMake Warning (dev) at .venv/lib/python3.10/site-packages/pykeops/keops/cuda.cmake:101 (find_package):
+  Policy CMP0146 is not set: The FindCUDA module is removed.  Run "cmake
+  --help-policy CMP0146" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:27 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at .venv/lib/python3.10/site-packages/pykeops/pybind11/CMakeLists.txt:8 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Warning (dev) at .venv/lib/python3.10/site-packages/pykeops/pybind11/tools/FindPythonLibsNew.cmake:96 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  .venv/lib/python3.10/site-packages/pykeops/pybind11/tools/pybind11Tools.cmake:38 (find_package)
+  .venv/lib/python3.10/site-packages/pykeops/pybind11/tools/pybind11Common.cmake:201 (include)
+  .venv/lib/python3.10/site-packages/pykeops/pybind11/CMakeLists.txt:170 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+make[1]: Warning: File 'CMakeFiles/Makefile2' has modification time 198 s in the future
+make[2]: Warning: File 'CMakeFiles/Makefile2' has modification time 198 s in the future
+make[3]: Warning: File 'CMakeFiles/libKeOps_template_b42a719c1a.dir/progress.make' has modification time 198 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File 'CMakeFiles/libKeOps_template_b42a719c1a.dir/progress.make' has modification time 198 s in the future
+In file included from .venv/lib/python3.10/site-packages/torch/include/pybind11/detail/../detail/common.h:317:0,
+                 from .venv/lib/python3.10/site-packages/torch/include/pybind11/detail/../attr.h:13,
+                 from .venv/lib/python3.10/site-packages/torch/include/pybind11/detail/class.h:12,
+                 from .venv/lib/python3.10/site-packages/torch/include/pybind11/pybind11.h:13,
+                 from .venv/lib/python3.10/site-packages/torch/include/torch/csrc/utils/pybind.h:9,
+                 from ./torch_headers.h:19,
+                 from <command-line>:0:
+.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template/../../version:1:1: error: expected unqualified-id before numeric constant
+ 1.5
+ ^~~
+In file included from .venv/lib/python3.10/site-packages/torch/include/pybind11/detail/../attr.h:13:0,
+                 from .venv/lib/python3.10/site-packages/torch/include/pybind11/detail/class.h:12,
+                 from .venv/lib/python3.10/site-packages/torch/include/pybind11/pybind11.h:13,
+                 from .venv/lib/python3.10/site-packages/torch/include/torch/csrc/utils/pybind.h:9,
+                 from ./torch_headers.h:19,
+                 from <command-line>:0:
+.venv/lib/python3.10/site-packages/torch/include/pybind11/detail/../detail/common.h:473:44: error: expected declaration before end of line
+ PYBIND11_NAMESPACE_BEGIN(PYBIND11_NAMESPACE)
+                                            ^
+make[3]: *** [CMakeFiles/libKeOps_template_b42a719c1a.dir.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp.o] Error 1
+make[2]: *** [CMakeFiles/libKeOps_template_b42a719c1a.dir/all] Error 2
+make[1]: *** [CMakeFiles/libKeOps_template_b42a719c1a.dir/rule] Error 2
+make: *** [libKeOps_template_b42a719c1a] Error 2
+Traceback (most recent call last):
+  File "scripts/compute_ph.py", line 105, in <module>
+    dists = get_dist(x=x, distance=distance, **dist_kwargs)
+  File "utils/dist_utils.py", line 766, in get_dist
+    dist = get_core_dist(x, input_distance=input_distance, **kwargs)
+  File "utils/dist_utils.py", line 48, in get_core_dist
+    knn_dists = kNN_dists(x, k=k, metric=input_distance).cpu().numpy()
+  File "/gpfs/laur/personal/xiongy/vis_utils/vis_utils/utils.py", line 155, in kNN_dists
+    knn_dists = dists.Kmin(K=k + 1, dim=0)[:, 1:] # use k+1 neighbours and omit first, which is just the point
+  File ".venv/lib/python3.10/site-packages/pykeops/common/lazy_tensor.py", line 2105, in Kmin
+    return self.reduction("KMin", opt_arg=K, axis=axis, dim=dim, **kwargs)
+  File ".venv/lib/python3.10/site-packages/pykeops/common/lazy_tensor.py", line 744, in reduction
+    return res()
+  File ".venv/lib/python3.10/site-packages/pykeops/common/lazy_tensor.py", line 929, in __call__
+    return self.callfun(*args, *self.variables, **self.kwargs)
+  File ".venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.py", line 568, in __call__
+    out = GenredAutograd.apply(
+  File ".venv/lib/python3.10/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File ".venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.py", line 47, in forward
+    myconv = LoadKeOps(
+  File ".venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 48, in __init__
+    self._safe_compile()
+  File ".venv/lib/python3.10/site-packages/pykeops/common/utils.py", line 75, in wrapper_filelock
+    func_res = func(*args, **kwargs)
+  File ".venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 55, in _safe_compile
+    compile_generic_routine(
+  File ".venv/lib/python3.10/site-packages/pykeops/common/compile_routines.py", line 269, in compile_generic_routine
+    fname = list(pathlib.Path(template_build_folder).glob(template_name + "*.so"))[
+IndexError: list index out of range

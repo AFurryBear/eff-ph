@@ -1,0 +1,89 @@
+CMake Error at /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:753 (message):
+  Compiling the CUDA compiler identification source file
+  "CMakeCUDACompilerId.cu" failed.
+
+  Compiler: /usr/bin/nvcc
+
+  Build flags:
+
+  Id flags: --keep;--keep-dir;tmp;-ccbin=/usr/bin/c++ -v
+
+
+
+  The output was:
+
+  1
+
+  #$ _SPACE_=
+
+  #$ _CUDART_=cudart
+
+  #$ _HERE_=/usr/lib/nvidia-cuda-toolkit/bin
+
+  #$ _THERE_=/usr/lib/nvidia-cuda-toolkit/bin
+
+  #$ _TARGET_SIZE_=
+
+  #$ _TARGET_DIR_=
+
+  #$ _TARGET_SIZE_=64
+
+  #$ NVVMIR_LIBRARY_DIR=/usr/lib/nvidia-cuda-toolkit/libdevice
+
+  #$
+  PATH=/usr/lib/nvidia-cuda-toolkit/bin:/gpfs/laur/personal/xiongy/eff-ph/.venv/bin:/gpfs/laur/personal/xiongy/eff-ph/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+
+  #$ LIBRARIES= -L/usr/lib/x86_64-linux-gnu/stubs
+
+  #$ rm tmp/a_dlink.reg.c
+
+  #$ "/usr/bin"/c++ -std=c++14 -D__CUDA_ARCH__=300 -E -x c++
+  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__
+  -D"__CUDACC_VER_BUILD__=85" -D"__CUDACC_VER_MINOR__=1"
+  -D"__CUDACC_VER_MAJOR__=9" -include "cuda_runtime.h" -m64
+  "CMakeCUDACompilerId.cu" > "tmp/CMakeCUDACompilerId.cpp1.ii"
+
+  In file included from /usr/include/host_config.h:50:0,
+
+                   from /usr/include/cuda_runtime.h:78,
+                   from <command-line>:0:
+
+  /usr/include/crt/host_config.h:121:2: error: #error -- unsupported GNU
+  version! gcc versions later than 6 are not supported!
+
+   #error -- unsupported GNU version! gcc versions later than 6 are not supported!
+    ^~~~~
+
+  # --error 0x1 --
+
+
+
+
+
+Call Stack (most recent call first):
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/share/cmake-3.27/Modules/CMakeDetermineCUDACompiler.cmake:307 (CMAKE_DETERMINE_COMPILER_ID)
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/keops/cuda.cmake:24 (enable_language)
+  CMakeLists.txt:29 (include)
+
+
+make: Makefile: No such file or directory
+make: *** No rule to make target 'Makefile'.  Stop.
+Traceback (most recent call last):
+  File "/gpfs/laur/personal/xiongy/eff-ph/scripts/test_pykeops_debug.py", line 12, in <module>
+    my_conv = Genred('-SqNorm2(x-y)', ['x = Vi(3)', 'y = Vj(3)'])
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/numpy/generic/generic_red.py", line 182, in __init__
+    self.myconv = LoadKeOps(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 48, in __init__
+    self._safe_compile()
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/utils.py", line 75, in wrapper_filelock
+    func_res = func(*args, **kwargs)
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 55, in _safe_compile
+    compile_generic_routine(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/compile_routines.py", line 245, in compile_generic_routine
+    template_name, is_rebuilt = get_or_build_pybind11_template(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/compile_routines.py", line 86, in get_or_build_pybind11_template
+    os.rename(
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3//KeOps_formula.o' -> '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3//build-pybind11_template-libKeOps_template_65a452e119/KeOps_formula.o'

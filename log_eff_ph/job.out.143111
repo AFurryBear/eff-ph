@@ -1,0 +1,13 @@
+Starting with toy_circle_1000_d_2_ortho_gauss_sigma_0.0_seed_0_core_k_15
+Computing PH for toy_circle with sigma 0.0 and distance core with {'k': 15}
+[pyKeOps] Compiling libKeOpstorch5f1d91edfb in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3:
+       formula: KMin_Reduction(Sum(Square((Var(0,2,0) - Var(1,2,1)))),16,1)
+       aliases: Var(0,2,0); Var(1,2,1); 
+       dtype  : float64
+... 
+
+--------------------- MAKE DEBUG -----------------
+Command '['cmake', '--build', '.', '--target', 'KeOps_formula', '--', 'VERBOSE=1']' returned non-zero exit status 2.
+
+--------------------- ----------- -----------------
+[pyKeOps] Compiling pybind11 template libKeOps_template_b42a719c1a in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3 ... 

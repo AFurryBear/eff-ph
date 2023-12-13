@@ -1,0 +1,78 @@
+CMake Warning (dev) at /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/keops/cuda.cmake:99 (find_package):
+  Policy CMP0146 is not set: The FindCUDA module is removed.  Run "cmake
+  --help-policy CMP0146" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:29 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+make: Warning: File 'Makefile' has modification time 198 s in the future
+make[1]: Warning: File 'CMakeFiles/Makefile2' has modification time 198 s in the future
+make[2]: Warning: File 'CMakeFiles/Makefile2' has modification time 198 s in the future
+make[3]: Warning: File 'CMakeFiles/copy_KeOps_formula.dir/flags.make' has modification time 198 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File 'CMakeFiles/copy_KeOps_formula.dir/flags.make' has modification time 198 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File 'CMakeFiles/KeOps_formula.dir/progress.make' has modification time 195 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File 'CMakeFiles/KeOps_formula.dir/progress.make' has modification time 195 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+CMake Warning (dev) at /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/keops/cuda.cmake:99 (find_package):
+  Policy CMP0146 is not set: The FindCUDA module is removed.  Run "cmake
+  --help-policy CMP0146" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:27 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/pybind11/CMakeLists.txt:8 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Warning (dev) at /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/pybind11/tools/FindPythonLibsNew.cmake:96 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/pybind11/tools/pybind11Tools.cmake:38 (find_package)
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/pybind11/tools/pybind11Common.cmake:201 (include)
+  /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/pybind11/CMakeLists.txt:169 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+make: Warning: File 'Makefile' has modification time 198 s in the future
+make[1]: Warning: File 'CMakeFiles/Makefile2' has modification time 198 s in the future
+make[2]: Warning: File 'CMakeFiles/Makefile2' has modification time 198 s in the future
+make[3]: Warning: File 'CMakeFiles/libKeOps_template_65a452e119.dir/flags.make' has modification time 198 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File 'CMakeFiles/libKeOps_template_65a452e119.dir/flags.make' has modification time 198 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+Traceback (most recent call last):
+  File "/gpfs/laur/personal/xiongy/eff-ph/scripts/test_pykeops_debug.py", line 12, in <module>
+    my_conv = Genred('-SqNorm2(x-y)', ['x = Vi(3)', 'y = Vj(3)'])
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/numpy/generic/generic_red.py", line 184, in __init__
+    ).import_module()
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 84, in import_module
+    return importlib.import_module(full_dll_name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1176, in create_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ImportError: /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/libKeOpsnumpy4f71cfee21/libKeOps_template_65a452e119.cpython-310-x86_64-linux-gnu.so: undefined symbol: __cudaRegisterFatBinaryEnd

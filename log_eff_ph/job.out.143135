@@ -1,0 +1,34 @@
+Starting with toy_circle_1000_d_2_ortho_gauss_sigma_0.0_seed_0_core_k_15
+Computing PH for toy_circle with sigma 0.0 and distance core with {'k': 15}
+[pyKeOps] Compiling libKeOpstorch5f1d91edfb in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3:
+       formula: KMin_Reduction(Sum(Square((Var(0,2,0) - Var(1,2,1)))),16,1)
+       aliases: Var(0,2,0); Var(1,2,1); 
+       dtype  : float64
+... 
+
+--------------------- MAKE DEBUG -----------------
+Command '['cmake', '--build', '.', '--target', 'libKeOps_template_b42a719c1a', '--', 'VERBOSE=1']' returned non-zero exit status 2.
+/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/bin/cmake -S/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template -B/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/make  -f CMakeFiles/Makefile2 libKeOps_template_b42a719c1a
+make[1]: Entering directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/bin/cmake -S/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template -B/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a --check-build-system CMakeFiles/Makefile.cmake 0
+/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_progress_start /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a/CMakeFiles 2
+/usr/bin/make  -f CMakeFiles/Makefile2 CMakeFiles/libKeOps_template_b42a719c1a.dir/all
+make[2]: Entering directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+/usr/bin/make  -f CMakeFiles/libKeOps_template_b42a719c1a.dir/build.make CMakeFiles/libKeOps_template_b42a719c1a.dir/depend
+make[3]: Entering directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+cd /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a && /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_depends "Unix Makefiles" /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a/CMakeFiles/libKeOps_template_b42a719c1a.dir/DependInfo.cmake "--color="
+make[3]: Leaving directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+/usr/bin/make  -f CMakeFiles/libKeOps_template_b42a719c1a.dir/build.make CMakeFiles/libKeOps_template_b42a719c1a.dir/build
+make[3]: Entering directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+[ 50%] Building CXX object CMakeFiles/libKeOps_template_b42a719c1a.dir/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp.o
+/usr/bin/c++ -DCUDA_BLOCK_SIZE=192 -DC_CONTIGUOUS=1 -DMAXIDGPU=0 -DMAXTHREADSPERBLOCK0=1024 -DMODULE_NAME=libKeOps_template_b42a719c1a -DSHAREDMEMPERBLOCK0=49152 -DUSE_CUDA=1 -DUSE_DOUBLE=1 -DUSE_HALF=0 -D_FORCE_INLINES -D_GLIBCXX_USE_CXX11_ABI=0 -D__TYPE__=double -DlibKeOps_template_b42a719c1a_EXPORTS -I/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template/../.. -I/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a -I/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_template/../../keops -I/usr/local/cuda-12.1/targets/x86_64-linux/include -I/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/torch/include -I/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /usr/include/python3.10 -isystem /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/pybind11/include -DUSE_OPENMP -fopenmp -Wall -Wno-unknown-pragmas -fmax-errors=2 -O3 -DNDEBUG -O3 -std=gnu++14 -fPIC -fvisibility=hidden -include torch_headers.h -flto -fno-fat-lto-objects -MD -MT CMakeFiles/libKeOps_template_b42a719c1a.dir/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp.o -MF CMakeFiles/libKeOps_template_b42a719c1a.dir/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp.o.d -o CMakeFiles/libKeOps_template_b42a719c1a.dir/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp.o -c /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp
+CMakeFiles/libKeOps_template_b42a719c1a.dir/build.make:76: recipe for target 'CMakeFiles/libKeOps_template_b42a719c1a.dir/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.cpp.o' failed
+make[3]: Leaving directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+CMakeFiles/Makefile2:99: recipe for target 'CMakeFiles/libKeOps_template_b42a719c1a.dir/all' failed
+make[2]: Leaving directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+CMakeFiles/Makefile2:106: recipe for target 'CMakeFiles/libKeOps_template_b42a719c1a.dir/rule' failed
+make[1]: Leaving directory '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a'
+Makefile:124: recipe for target 'libKeOps_template_b42a719c1a' failed
+
+--------------------- ----------- -----------------

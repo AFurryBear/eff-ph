@@ -1,0 +1,31 @@
+Cleaning /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/...
+    - /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-pybind11_template-libKeOps_template_b42a719c1a has been removed.
+    - /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-03eee381c6 has been removed.
+/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/
+[pyKeOps] Initializing build folder for dtype=float64 and lang=numpy in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3 ... 
+--------------------- CMAKE DEBUG -----------------
+Command '['cmake', '/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_keops_formula/', "-DCMAKE_BUILD_TYPE='Release'", "-Dshared_obj_name='KeOps_formula'", "-DPYTHON_LANG='numpy'", "-D__TYPE__='double'", '-DC_CONTIGUOUS=1', "-DcommandLine=cmake /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_keops_formula/ -DCMAKE_BUILD_TYPE='Release' -Dshared_obj_name='KeOps_formula' -DPYTHON_LANG='numpy' -D__TYPE__='double' -DC_CONTIGUOUS=1"]' returned non-zero exit status 1.
+-- The CXX compiler identification is GNU 7.5.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for a CUDA compiler
+-- Looking for a CUDA compiler - /usr/bin/nvcc
+-- The CUDA Host CXX Compiler: /usr/bin/c++
+-- Configuring incomplete, errors occurred!
+
+--------------------- ----------- -----------------
+done.
+[pyKeOps] Compiling libKeOpsnumpy4f71cfee21 in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3:
+       formula: Sum_Reduction(-SqNorm2(x-y),1)
+       aliases: x = Vi(0,3); y = Vj(1,3); 
+       dtype  : float64
+... 
+
+--------------------- MAKE DEBUG -----------------
+Command '['cmake', '--build', '.', '--target', 'KeOps_formula', '--', 'VERBOSE=1']' returned non-zero exit status 2.
+
+--------------------- ----------- -----------------
+[pyKeOps] Compiling pybind11 template libKeOps_template_65a452e119 in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3 ... 

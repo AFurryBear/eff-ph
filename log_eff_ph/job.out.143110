@@ -1,0 +1,48 @@
+Starting with toy_circle_1000_d_2_ortho_gauss_sigma_0.0_seed_0_core_k_15
+Computing PH for toy_circle with sigma 0.0 and distance core with {'k': 15}
+[pyKeOps] Initializing build folder for dtype=float64 and lang=torch in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3 ... 
+--------------------- CMAKE DEBUG -----------------
+Command '['cmake', '/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_keops_formula/', "-DCMAKE_BUILD_TYPE='Release'", "-Dshared_obj_name='KeOps_formula'", "-DPYTHON_LANG='torch'", "-D__TYPE__='double'", '-DC_CONTIGUOUS=1', '-DPYTORCH_ROOT_DIR=/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/torch', '-D_GLIBCXX_USE_CXX11_ABI=0', "-DcommandLine=cmake /gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/cmake_scripts/script_keops_formula/ -DCMAKE_BUILD_TYPE='Release' -Dshared_obj_name='KeOps_formula' -DPYTHON_LANG='torch' -D__TYPE__='double' -DC_CONTIGUOUS=1 -DPYTORCH_ROOT_DIR=/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/torch -D_GLIBCXX_USE_CXX11_ABI=0"]' returned non-zero exit status 1.
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for a CUDA compiler
+-- Looking for a CUDA compiler - /usr/local/cuda-12.1/bin/nvcc
+-- The CUDA Host CXX Compiler: /usr/bin/c++
+-- The CUDA compiler identification is NVIDIA 12.1.105
+-- Check for working CUDA compiler: /usr/local/cuda-12.1/bin/nvcc
+-- Check for working CUDA compiler: /usr/local/cuda-12.1/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Compute properties automatically set to: -DMAXIDGPU=0;-DMAXTHREADSPERBLOCK0=1024;-DSHAREDMEMPERBLOCK0=49152
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Autodetected CUDA architecture(s): 7.5 
+-- Configuring incomplete, errors occurred!
+See also "/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-03eee381c6/CMakeFiles/CMakeOutput.log".
+See also "/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3/build-03eee381c6/CMakeFiles/CMakeError.log".
+
+--------------------- ----------- -----------------
+done.
+[pyKeOps] Compiling libKeOpstorch5f1d91edfb in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3:
+       formula: KMin_Reduction(Sum(Square((Var(0,2,0) - Var(1,2,1)))),16,1)
+       aliases: Var(0,2,0); Var(1,2,1); 
+       dtype  : float64
+... 
+
+--------------------- MAKE DEBUG -----------------
+Command '['cmake', '--build', '.', '--target', 'KeOps_formula', '--', 'VERBOSE=1']' returned non-zero exit status 2.
+
+--------------------- ----------- -----------------
+[pyKeOps] Compiling pybind11 template libKeOps_template_b42a719c1a in /gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3 ... 

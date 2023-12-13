@@ -1,0 +1,34 @@
+make: Makefile: No such file or directory
+make: *** No rule to make target 'Makefile'.  Stop.
+Traceback (most recent call last):
+  File "/gpfs/laur/personal/xiongy/eff-ph/scripts/compute_ph.py", line 105, in <module>
+    dists = get_dist(x=x, distance=distance, **dist_kwargs)
+  File "/gpfs/laur/personal/xiongy/eff-ph/utils/dist_utils.py", line 766, in get_dist
+    dist = get_core_dist(x, input_distance=input_distance, **kwargs)
+  File "/gpfs/laur/personal/xiongy/eff-ph/utils/dist_utils.py", line 48, in get_core_dist
+    knn_dists = kNN_dists(x, k=k, metric=input_distance).cpu().numpy()
+  File "/gpfs/laur/personal/xiongy/vis_utils/vis_utils/utils.py", line 155, in kNN_dists
+    knn_dists = dists.Kmin(K=k + 1, dim=0)[:, 1:] # use k+1 neighbours and omit first, which is just the point
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/lazy_tensor.py", line 2105, in Kmin
+    return self.reduction("KMin", opt_arg=K, axis=axis, dim=dim, **kwargs)
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/lazy_tensor.py", line 744, in reduction
+    return res()
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/lazy_tensor.py", line 929, in __call__
+    return self.callfun(*args, *self.variables, **self.kwargs)
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.py", line 568, in __call__
+    out = GenredAutograd.apply(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/torch/generic/generic_red.py", line 47, in forward
+    myconv = LoadKeOps(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 48, in __init__
+    self._safe_compile()
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/utils.py", line 75, in wrapper_filelock
+    func_res = func(*args, **kwargs)
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/keops_io.py", line 55, in _safe_compile
+    compile_generic_routine(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/compile_routines.py", line 245, in compile_generic_routine
+    template_name, is_rebuilt = get_or_build_pybind11_template(
+  File "/gpfs/laur/personal/xiongy/eff-ph/.venv/lib/python3.10/site-packages/pykeops/common/compile_routines.py", line 86, in get_or_build_pybind11_template
+    os.rename(
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3//KeOps_formula.o' -> '/gpfs/laur/personal/xiongy/.cache/pykeops-1.5-cpython-310-gpu3//build-pybind11_template-libKeOps_template_b42a719c1a/KeOps_formula.o'
