@@ -1,12 +1,13 @@
 import numpy as np
 import sys
-sys.path.append('/u/yxiong/eff-ph/utils/')
-sys.path.append('/u/yxiong/vis_utils/')
+import os
+project_path = '/gpfs/laur/data/xiongy/eff-ph/'
+sys.path.append(os.path.join(project_path,'utils/'))
+sys.path.append(os.path.join(project_path,'../vis_utils/'))
 from utils import get_path, read_ripser_result, compute_ph
 from io_utils import dist_kwargs_to_str
 from toydata_utils import get_toy_data
 from dist_utils import get_dist
-import os
 #####################################################################
 # Hyperparameters
 #####################################################################
@@ -97,8 +98,8 @@ n = 1000
 
 #####################################################################
 
-root_path = '/u/yxiong/eff-ph/data'
-
+root_path = os.path.join(project_path,'data')
+os.makedirs(os.path.join(root_path,dataset),exist_ok=True)
 for seed in seeds:
     for sigma in sigmas:
         # get data
