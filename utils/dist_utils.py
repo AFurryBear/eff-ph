@@ -8,11 +8,8 @@ from openTSNE.nearest_neighbors import KNNIndex
 import os
 import pickle
 from sklearn.decomposition import PCA
-import sys
-envir_path = '/gpfs/laur/data/xiongy/eff-ph/'
-sys.path.append(os.path.join(envir_path,'../vis_utils/'))
-from vis_utils.vis_utils.utils import load_dict, save_dict, kNN_dists, kNN_graph
-from vis_utils.vis_utils.tsne_wrapper import TSNEwrapper
+from vis_utils.utils import load_dict, save_dict, kNN_dists, kNN_graph
+from vis_utils.tsne_wrapper import TSNEwrapper
 
 
 def sim_to_dense(dissim):

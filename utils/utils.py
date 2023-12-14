@@ -29,7 +29,7 @@ def get_path(path_type):
             print("There is no path 'fig_path'.")
     elif path_type == "ripser":
         try:
-            return '/gpfs/laur/data/xiongy/risper/'
+            return '/gpfs/laur/data/xiongy/ripser'
         except KeyError:
             print("There is no path 'ripser_path'.")
 
